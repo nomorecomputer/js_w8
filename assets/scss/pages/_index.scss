@@ -1,0 +1,48 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 1000;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: #64c3bf;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.in-cart {
+  position: absolute;
+  bottom: 33px;
+  right: 5px;
+  background-color: lch(87.74% 14.74 283.48);
+  color: red;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+.in-cart.hidden,
+.orderInfo-message.hidden {
+  display: none;
+}
